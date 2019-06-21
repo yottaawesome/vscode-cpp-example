@@ -4,7 +4,7 @@
 
 This repository is just an example of building a simple C++ app using VS Code. It is intended for reference purposes as I typically use VS Community Edition for my Windows C++ development, but I also wanted to know how to be able to build using VS Code.
 
-It is based on [documentation from Microsoft](https://devblogs.microsoft.com/cppblog/building-your-c-application-with-visual-studio-code/), but updated to reflect the newer version of the [tasks.json format](https://go.microsoft.com/fwlink/?LinkId=733558).
+It is based on [documentation from Microsoft](https://devblogs.microsoft.com/cppblog/building-your-c-application-with-visual-studio-code/) (including their [example hello world app](https://devblogs.microsoft.com/wp-content/uploads/sites/9/2019/02/helloworldcpp-vscode.zip)), but updated to reflect the newer version of the [tasks.json format](https://go.microsoft.com/fwlink/?LinkId=733558).
 
 ## Using this repo
 
