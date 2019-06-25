@@ -8,11 +8,15 @@ It is based on [documentation from Microsoft](https://devblogs.microsoft.com/cpp
 
 ## Using this repo
 
-Simply [download VS Code](https://code.visualstudio.com/) (I used 1.35.1 for creating this repo), clone this repo, and open this folder. Update line 3 in `build.bat` file to reflect your installation's `vcvarsall.bat` location. You should then be able to build using `CTRL+B`. The DLL example also defines a different way of building via MSVC.
+You'll need [download VS Code](https://code.visualstudio.com/) (I used 1.35.1 for creating this repo) and to clone this repo 
 
-## Notes
+### For helloworld example
 
-If you're using "msvc build" task (defined in the DLL example), [**you'll need to launch VS Code with the x64 Native Commands Tools Prompt for Visual Studio 2019**](https://docs.microsoft.com/en-us/cpp/build/how-to-enable-a-64-bit-visual-cpp-toolset-on-the-command-line?view=vs-2019). This will set your environment for x64 builds. Regular Developer Command Prompts do not do this, and this will lead to encountering `fatal error LNK1112: module machine type 'x64' conflicts with target machine type 'X86'` errors, which would otherwise only go away by removing the `/MACHINE:X64` linker argument.
+Open `hello-world` in VS Code. Update line 3 in `build.bat` file to reflect your installation's `vcvarsall.bat` location. You should then be able to build using `CTRL+B`.
+
+### For DLL example
+
+The DLL example defines a different task (`msvc build`) for building via MSVC in addition to `Debug`. If building with `Debug`, follow the procedure in the previous example. If building with `msvc build`, [**you'll need to launch VS Code with the x64 Native Commands Tools Prompt for Visual Studio 2019**](https://docs.microsoft.com/en-us/cpp/build/how-to-enable-a-64-bit-visual-cpp-toolset-on-the-command-line?view=vs-2019). This will set your environment for x64 builds. Regular Developer Command Prompts do not do this, and this will lead to encountering `fatal error LNK1112: module machine type 'x64' conflicts with target machine type 'X86'` errors, which would otherwise only go away by removing the `/MACHINE:X64` linker argument.
 
 ## Useful resources
 
