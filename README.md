@@ -8,7 +8,7 @@ It is based on [documentation from Microsoft](https://devblogs.microsoft.com/cpp
 
 ## Using this repo
 
-You'll need [download VS Code](https://code.visualstudio.com/) (I used 1.35.1 for creating this repo) and to clone this repo 
+You'll need [download VS Code](https://code.visualstudio.com/) (I used 1.35.1 for creating this repo) and to clone this repo. In the example dirs, you'll need to create the output directory (`build/debug`), or `cl.exe` will complain that it can't write to the `.pdb` files.
 
 ### For helloworld example
 
