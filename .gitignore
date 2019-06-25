@@ -33,3 +33,5 @@
 
 *.pdb
 *.ilk
+
+build/

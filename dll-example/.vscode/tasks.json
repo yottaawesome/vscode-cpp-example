@@ -1,0 +1,111 @@
+{  
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+
+    "tasks": [
+        {
+            "label": "Debug",
+            "type": "shell",
+            "command": "./build.bat",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": "$msCompile",
+            "windows": {
+                "command": "./build.bat"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "msvc build",
+            "type": "shell",
+            "options": 
+            {
+                "env": {
+                    "outputPath": "${workspaceFolder}\\build\\debug"
+                }
+            },
+            "command": "cl.exe",
+            "args": [
+                "/JMC",
+                "/permissive-",
+                "/GS",
+                "/W3",
+                "/Zc:wchar_t",
+                "/ZI",
+                "/Gm-",
+                "/Od",
+                "/sdl",
+                "/FS",
+                "/Fd$env:outputPath\\vc142.pdb",
+                "/Zc:inline",
+                "/fp:precise",
+                "/D _WINDLL",
+                "/D _MBCS",
+                "/errorReport:prompt",
+                "/WX-",
+                "/Zc:forScope", 
+                "/RTC1",
+                "/Gd",
+                "/MD",
+                "/FC",
+                "/EHsc",
+                "/nologo",
+                "/diagnostics:column",
+                "/Fo$env:outputPath\\hello.obj",
+                "dll.cpp",
+                "/link",
+                "/OUT:$env:outputPath\\hello.dll",
+                "/NXCOMPAT",
+                "/PDB:$env:outputPath\\hello.pdb",
+                "/DYNAMICBASE",
+                "kernel32.lib",
+                "user32.lib",
+                "gdi32.lib",
+                "winspool.lib",
+                "comdlg32.lib",
+                "advapi32.lib",
+                "shell32.lib",
+                "ole32.lib",
+                "oleaut32.lib",
+                "uuid.lib",
+                "odbc32.lib",
+                "odbccp32.lib" ,
+                "/IMPLIB:$env:outputPath\\hello.lib",
+                "/DLL",
+                "/MACHINE:X64",
+                "/INCREMENTAL",
+                "/SUBSYSTEM:CONSOLE",
+                "/ERRORREPORT:PROMPT",
+                "/NOLOGO",
+                "/TLBID:1"
+            ],
+            "group":  {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal":"always"
+            },
+            "problemMatcher": "$msCompile"
+        }
+    ],
+    "inputs": [
+		{
+            "type": "pickString",
+            "id": "build-dir",
+            "description": "What type of component do you want to create?",
+            "options": ["build\\debug"],
+            "default": "build\\debug"
+        }
+	],
+}
